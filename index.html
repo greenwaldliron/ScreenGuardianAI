@@ -14,22 +14,21 @@
     "url": "https://screenguardianai.com/"
   }
   </script>
-  
+
   <meta name="description" content="Screen Guardian protects your laptop from prying eyes the moment you step away - and from anyone trying to sneak a look over your shoulder. Smart detection. Instant alerts. 100% private.">
   <meta property="og:title" content="Screen Guardian">
-  
   <meta name="robots" content="index, follow">
   <meta name="author" content="Screen Guardian">
   <meta name="keywords" content="Screen Guardian, screen privacy, laptop privacy, anti snooping, shoulder surfing protection, privacy app, laptop security">
-  
+
   <link rel="canonical" href="https://screenguardianai.com/">
-  
+
   <meta property="og:title" content="Screen Guardian | Protect Your Screen From Prying Eyes">
   <meta property="og:description" content="Screen Guardian protects your laptop from prying eyes the moment you step away - and from anyone trying to sneak a look over your shoulder. Smart detection. Instant alerts. 100% private.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://screenguardianai.com/">
   <meta property="og:image" content="https://screenguardianai.com/ScreenGuardianScene.png">
-  
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Screen Guardian | Protect Your Screen From Prying Eyes">
   <meta name="twitter:description" content="Smart detection. Instant alerts. 100% private.">
@@ -38,7 +37,7 @@
   <link rel="icon" href="/favicon.png" sizes="48x48" type="image/png">
   <link rel="icon" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
-  
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,53 +59,130 @@
     }
   }
   </script>
-  
+
   <link rel="icon" type="image/png" href="screen_guardian_logo.png">
   <link rel="shortcut icon" href="screen_guardian_logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #1e293b;
+      --text: #ffffff;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+      --text-footer: #64748b;
+      --primary-a: #2563eb;
+      --primary-b: #06b6d4;
+      --cta-a: #1d4ed8;
+      --cta-b: #0891b2;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.25);
+      --shadow-strong: 0 30px 60px rgba(0, 0, 0, 0.5);
+
+      --page-padding: clamp(20px, 4vw, 80px);
+      --section-padding: clamp(56px, 8vw, 100px);
+      --container-width: 1200px;
+      --hero-gap: clamp(28px, 4vw, 56px);
+      --grid-gap: clamp(18px, 2vw, 30px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    header {
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(15, 23, 42, 0.95);
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100%, var(--container-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(203, 213, 225, 0.08);
+      padding: 16px var(--page-padding);
     }
 
-    header img { height: 42px; }
+    .header-inner {
+      width: min(100%, var(--container-width));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-    nav a {
-      margin-left: 25px;
+    .brand img {
+      height: clamp(34px, 2.2vw, 42px);
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 1.8vw, 24px);
+      flex-wrap: wrap;
+    }
+
+    .site-nav a:not(.btn-primary) {
       text-decoration: none;
-      color: #cbd5e1;
+      color: var(--text-soft);
       font-weight: 500;
-      transition: 0.3s;
+      transition: color 0.25s ease;
     }
 
-    nav a:hover { color: white; }
+    .site-nav a:not(.btn-primary):hover {
+      color: var(--text);
+    }
 
     .btn-primary {
-      background: linear-gradient(90deg, #2563eb, #06b6d4);
-      padding: 12px 24px;
-      border-radius: 8px;
+      background: linear-gradient(90deg, var(--primary-a), var(--primary-b));
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
       color: white;
       font-weight: 600;
       text-decoration: none;
-      transition: 0.3s;
-      display: inline-block;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      white-space: nowrap;
+      border: none;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
     }
 
     .btn-primary:hover {
@@ -114,300 +190,488 @@
       box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
     }
 
-    .hero {
+    .download-btn-stack {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 8%;
-      gap: 40px;
+      flex-direction: column;
+      line-height: 1.1;
+      align-items: flex-start;
     }
 
-    .hero-text { max-width: 600px; }
+    .download-btn-subtext {
+      font-size: 10px;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: var(--section-padding) var(--page-padding);
+    }
+
+    .hero-inner {
+      width: min(100%, var(--container-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      align-items: center;
+      gap: var(--hero-gap);
+    }
+
+    .hero-text {
+      max-width: 640px;
+    }
 
     .hero h1 {
-      font-size: 52px;
+      font-size: clamp(2.35rem, 4.8vw, 4rem);
       font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
       margin-bottom: 20px;
-      line-height: 1.1;
     }
 
     .hero p {
-      font-size: 20px;
-      color: #cbd5e1;
-      margin-bottom: 30px;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: var(--text-soft);
+      margin-bottom: 28px;
     }
 
-    .hero img {
+    .hero-secondary-note {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .hero-secondary-note a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    .hero-secondary-note a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-visual img {
       width: 100%;
-      max-width: 600px;
+      max-width: 620px;
       height: auto;
-      border-radius: 16px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-strong);
     }
 
     .section {
-      padding: 80px 8%;
+      padding: var(--section-padding) var(--page-padding);
       text-align: center;
     }
 
-    .section h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
+    .section h2,
+    .privacy-section h2,
+    .cta-section h2 {
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
     }
 
-    .section p {
-      max-width: 700px;
-      margin: auto;
-      color: #cbd5e1;
-      margin-bottom: 50px;
-      font-size: 18px;
+    .section > .container > p,
+    .privacy-section p,
+    .cta-section p {
+      max-width: 720px;
+      margin: 0 auto 42px;
+      color: var(--text-soft);
+      font-size: clamp(1rem, 1.2vw, 1.125rem);
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--grid-gap);
+      margin-top: 10px;
     }
 
     .feature-box {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 16px;
-      transition: 0.3s;
+      background: var(--card);
+      padding: clamp(22px, 2vw, 30px);
+      border-radius: var(--radius-md);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: var(--shadow-soft);
+      text-align: left;
+      height: 100%;
     }
 
     .feature-box:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     .feature-box h3 {
-      margin-bottom: 15px;
-      font-size: 22px;
+      margin-bottom: 12px;
+      font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+      line-height: 1.3;
     }
 
     .feature-box p {
-      color: #94a3b8;
-      font-size: 16px;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0;
+      max-width: none;
     }
 
     .privacy-section {
-      background: #111827;
-      padding: 80px 8%;
+      background: var(--bg-soft);
+      padding: var(--section-padding) var(--page-padding);
       text-align: center;
     }
 
-    .privacy-section h2 {
-      font-size: 38px;
-      margin-bottom: 20px;
+    .privacy-section p {
+      margin-bottom: 0;
     }
 
     .cta-section {
-      padding: 100px 8%;
+      padding: var(--section-padding) var(--page-padding);
       text-align: center;
-      background: linear-gradient(90deg, #1d4ed8, #0891b2);
+      background: linear-gradient(90deg, var(--cta-a), var(--cta-b));
     }
 
-    .cta-section h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
+    .cta-section .btn-primary {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: none;
     }
 
-    .cta-section p {
-      font-size: 20px;
-      margin-bottom: 40px;
+    .cta-section .btn-primary:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     }
 
-    footer {
-      padding: 40px 8%;
+    .cta-followup {
+      margin-top: 12px;
+      margin-bottom: 0 !important;
+    }
+
+    .cta-followup a {
+      color: #e0f2fe;
+      text-decoration: none;
+    }
+
+    .cta-followup a:hover {
+      text-decoration: underline;
+    }
+
+    .terms-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .terms-wrapper h3 {
+      font-size: 1.125rem;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .terms-wrapper h3:first-child {
+      margin-top: 0;
+    }
+
+    .terms-wrapper p {
+      margin: 0 0 14px 0;
+      color: var(--text-soft);
+      max-width: none;
+      font-size: 16px;
+    }
+
+    .terms-wrapper a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    .terms-wrapper a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 36px var(--page-padding);
       text-align: center;
-      background: #0f172a;
-      color: #64748b;
+      background: var(--bg);
+      color: var(--text-footer);
       font-size: 14px;
+      border-top: 1px solid rgba(203, 213, 225, 0.06);
     }
 
-    @media(max-width: 1000px) {
-      .hero { flex-direction: column; text-align: center; }
-      .hero img { width: 100%; max-width: 500px; }
-      .hero-text { max-width: 100%; }
+    @media (max-width: 1100px) {
+      .hero-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .site-nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .hero-visual {
+        justify-content: center;
+      }
+
+      .hero-visual img {
+        max-width: 560px;
+      }
+
+      .feature-box {
+        text-align: center;
+      }
+
+      .download-btn-stack {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .site-nav a:not(.btn-primary) {
+        width: 100%;
+      }
+
+      .btn-primary {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+      }
+
+      .section > .container > p,
+      .privacy-section p,
+      .cta-section p {
+        margin-bottom: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="screen_guardian_logo.png" alt="Screen Guardian Logo">
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#privacy">Privacy</a>
-    <a href="#terms">Terms</a>
-    
-    <a href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn-primary"
-   style="display: inline-flex; align-items: center; gap: 8px;">
-
-   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M3 4l8-1v9H3V4zm9-1l9-1v10h-9V3zM3 13h8v9l-8-1v-8zm9 0h9v10l-9-1v-9z"/>
-   </svg>
-
-   <div style="display: flex; flex-direction: column; line-height: 1.1;">
-      <span>Download</span>
-      <span style="font-size: 10px; opacity: 0.8;">Free 3-day trial included</span>
-   </div>
-
-</a>
-    
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-text">
-    <h1>Stop People From Snooping on Your Laptop 👀</h1>
-    <p>
-      Screen Guardian protects your laptop from prying eyes the moment you step away or when in public. 
-      <br>Smart detection. Instant alerts. 100% private.
-    </p>
-    <a href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-primary">
-      Get Screen Guardian
-    </a>
-    <p style="margin-top:10px; font-size:14px;">
-      Free 3-day trial included. Already installed? 
-      <a href="https://screenguardianai.lemonsqueezy.com/checkout" target="_blank" rel="noopener noreferrer">
-        Buy a full license
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Screen Guardian home">
+        <img src="screen_guardian_logo.png" alt="Screen Guardian Logo">
       </a>
-    </p>
-  </div>
-  
-  <img src="ScreenGuardianScene.png" alt="Unauthorized user looking at laptop">
-</section>
 
-<section class="section" id="features">
-  <h2>Smart Protection That Works Automatically</h2>
-  <p>
-    Whether you're grabbing coffee or stepping into a meeting, Screen Guardian keeps watch so you don't have to. 
-    And if someone tries to peek over your shoulder, it alerts you instantly.
-  </p>
+      <nav class="site-nav">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
 
-  <div class="features">
-    <div class="feature-box">
-      <h3>👤 AI Face Recognition</h3>
-      <p>Detects unfamiliar faces instantly when you're away from your laptop.</p>
-    </div>  
+        <a
+          href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 4l8-1v9H3V4zm9-1l9-1v10h-9V3zM3 13h8v9l-8-1v-8zm9 0h9v10l-9-1v-9z"/>
+          </svg>
 
-    <div class="feature-box">
-      <h3>🚨 Instant Alerts</h3>
-      <p>Get real-time notifications on your phone if someone tries to access your screen.</p>
+          <span class="download-btn-stack">
+            <span>Download</span>
+            <span class="download-btn-subtext">Free 3-day trial included</span>
+          </span>
+        </a>
+      </nav>
     </div>
+  </header>
 
-    <div class="feature-box">
-      <h3>🔐 Fully Private</h3>
-      <p>Everything runs locally on your device. No cloud uploads. No spying.</p>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Stop People From Snooping on Your Laptop 👀</h1>
+        <p>
+          Screen Guardian protects your laptop from prying eyes the moment you step away or when in public.
+          <br>Smart detection. Instant alerts. 100% private.
+        </p>
+
+        <a
+          href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Get Screen Guardian
+        </a>
+
+        <p class="hero-secondary-note">
+          Free 3-day trial included. Already installed?
+          <a href="https://screenguardianai.lemonsqueezy.com/checkout" target="_blank" rel="noopener noreferrer">
+            Buy a full license
+          </a>
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <img src="ScreenGuardianScene.png" alt="Unauthorized user looking at laptop">
+      </div>
     </div>
+  </section>
 
-    <div class="feature-box">
-      <h3>🔑 Encrypted Activity Log</h3>
-      <p>Review security events securely. Auto-deleted after 7 days.</p>
+  <section class="section" id="features">
+    <div class="container">
+      <h2>Smart Protection That Works Automatically</h2>
+      <p>
+        Whether you're grabbing coffee or stepping into a meeting, Screen Guardian keeps watch so you don't have to.
+        And if someone tries to peek over your shoulder, it alerts you instantly.
+      </p>
+
+      <div class="features">
+        <div class="feature-box">
+          <h3>👤 AI Face Recognition</h3>
+          <p>Detects unfamiliar faces instantly when you're away from your laptop.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>🚨 Instant Alerts</h3>
+          <p>Get real-time notifications on your phone if someone tries to access your screen.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>🔐 Fully Private</h3>
+          <p>Everything runs locally on your device. No cloud uploads. No spying.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>🔑 Encrypted Activity Log</h3>
+          <p>Review security events securely. Auto-deleted after 7 days.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>⚡ Lightweight & Fast</h3>
+          <p>Designed to run efficiently without slowing down your system.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>👀 Bonus - Screen Snooping Detection</h3>
+          <p>Get notified when someone tries to peek at your screen over your shoulder.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="feature-box">
-      <h3>⚡ Lightweight & Fast</h3>
-      <p>Designed to run efficiently without slowing down your system.</p>
+  <section class="privacy-section" id="privacy">
+    <div class="container">
+      <h2>Privacy Is Not a Feature. It’s the Foundation.</h2>
+      <p>
+        Screen Guardian processes everything locally on your device.
+        Face data, logs, and images never leave your computer.
+        Encrypted storage. Secure system vault. Zero cloud dependency.
+      </p>
     </div>
+  </section>
 
-    <div class="feature-box">
-      <h3>👀 Bonus - Screen Snooping Detection</h3>
-      <p>Get notified when someone tries to peek at your screen over your shoulder.</p>
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stop People From Watching Your Screen - Starting Today.</h2>
+      <p>Take control of your privacy and protect your laptop wherever you work.</p>
+
+      <a
+        href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 4l8-1v9H3V4zm9-1l9-1v10h-9V3zM3 13h8v9l-8-1v-8zm9 0h9v10l-9-1v-9z"/>
+        </svg>
+        <span>Download Now</span>
+      </a>
+
+      <p class="cta-followup">
+        Already installed?
+        <a href="https://screenguardianai.lemonsqueezy.com/checkout" target="_blank" rel="noopener noreferrer">
+          Unlock full version
+        </a>
+      </p>
     </div>
-    
-  </div>
-</section>
+  </section>
 
-<section class="privacy-section" id="privacy">
-  <h2>Privacy Is Not a Feature. It’s the Foundation.</h2>
-  <p>
-    Screen Guardian processes everything locally on your device.
-    Face data, logs, and images never leave your computer.
-    Encrypted storage. Secure system vault. Zero cloud dependency.
-  </p>
-</section>
+  <section class="section" id="terms">
+    <div class="container">
+      <h2>Terms & Conditions</h2>
+      <p>
+        By downloading or using Screen Guardian, you agree to the following terms.
+      </p>
 
-<div class="cta-section">
-  <h2>Stop People From Watching Your Screen - Starting Today.</h2>
-  <p>Take control of your privacy and protect your laptop wherever you work.</p>
+      <div class="terms-wrapper">
+        <h3>1. Use of the Application</h3>
+        <p>
+          Screen Guardian is provided for personal and professional use to enhance privacy and security.
+          You agree to use the application only for lawful purposes and in accordance with applicable laws.
+        </p>
 
-  <a href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-primary">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M3 4l8-1v9H3V4zm9-1l9-1v10h-9V3zM3 13h8v9l-8-1v-8zm9 0h9v10l-9-1v-9z"/>
-    </svg>
-    Download Now
-  </a>
-  
-  <p style="margin-top:10px;">
-    Already installed? 
-    <a href="https://screenguardianai.lemonsqueezy.com/checkout" target="_blank" rel="noopener noreferrer">
-      Unlock full version
-    </a>
-  </p>
-</div>
+        <h3>2. Privacy & Data Processing</h3>
+        <p>
+          Screen Guardian processes all data locally on your device. No images, face data, or activity logs are transmitted to external servers.
+          You are solely responsible for how you use the software and any data stored on your device.
+        </p>
 
-<section class="section" id="terms">
-  <h2>Terms & Conditions</h2>
-  <p>
-    By downloading or using Screen Guardian, you agree to the following terms.
-  </p>
+        <h3>3. No Warranty</h3>
+        <p>
+          Screen Guardian is provided "as is" without warranties of any kind, either express or implied.
+          We do not guarantee that the application will always detect unauthorized access or prevent all privacy risks.
+        </p>
 
-  <div style="max-width: 800px; margin: auto; text-align: left; color: #cbd5e1; font-size: 16px; line-height: 1.8;">
+        <h3>4. Limitation of Liability</h3>
+        <p>
+          To the fullest extent permitted by law, Screen Guardian shall not be liable for any indirect, incidental, or consequential damages,
+          including loss of data, privacy breaches, or system issues arising from the use of the application.
+        </p>
 
-    <h3>1. Use of the Application</h3>
-    <p>
-      Screen Guardian is provided for personal and professional use to enhance privacy and security.
-      You agree to use the application only for lawful purposes and in accordance with applicable laws.
-    </p>
+        <h3>5. License</h3>
+        <p>
+          You are granted a non-exclusive, non-transferable license to use Screen Guardian.
+          You may not reverse engineer, redistribute, or resell the software without permission.
+        </p>
 
-    <h3>2. Privacy & Data Processing</h3>
-    <p>
-      Screen Guardian processes all data locally on your device. No images, face data, or activity logs are transmitted to external servers.
-      You are solely responsible for how you use the software and any data stored on your device.
-    </p>
+        <h3>6. Updates & Changes</h3>
+        <p>
+          We may update or modify these terms at any time. Continued use of the application after changes constitutes acceptance of the new terms.
+        </p>
 
-    <h3>3. No Warranty</h3>
-    <p>
-      Screen Guardian is provided "as is" without warranties of any kind, either express or implied.
-      We do not guarantee that the application will always detect unauthorized access or prevent all privacy risks.
-    </p>
+        <h3>7. Contact</h3>
+        <p>
+          For any questions regarding these Terms & Conditions, please contact:
+          <br><a href="mailto:alerts.screenguardian@gmail.com">Screen Guardian Team</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <h3>4. Limitation of Liability</h3>
-    <p>
-      To the fullest extent permitted by law, Screen Guardian shall not be liable for any indirect, incidental, or consequential damages,
-      including loss of data, privacy breaches, or system issues arising from the use of the application.
-    </p>
-
-    <h3>5. License</h3>
-    <p>
-      You are granted a non-exclusive, non-transferable license to use Screen Guardian.
-      You may not reverse engineer, redistribute, or resell the software without permission.
-    </p>
-
-    <h3>6. Updates & Changes</h3>
-    <p>
-      We may update or modify these terms at any time. Continued use of the application after changes constitutes acceptance of the new terms.
-    </p>
-
-    <h3>7. Contact</h3>
-    <p>
-      For any questions regarding these Terms & Conditions, please contact:
-      <br><a href="mailto:alerts.screenguardian@gmail.com">Screen Guardian Team</a>
-    </p>
-
-  </div>
-</section>
-  
-<footer>
-  © 2026 Screen Guardian. All rights reserved.
-</footer>
+  <footer class="site-footer">
+    © 2026 Screen Guardian. All rights reserved.
+  </footer>
 
 </body>
 </html>
