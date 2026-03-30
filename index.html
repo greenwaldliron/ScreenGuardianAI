@@ -15,18 +15,15 @@
   }
   </script>
 
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-95FJL8M6N0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-95FJL8M6N0');
   </script>
 
-  
   <meta name="description" content="Screen Guardian protects your laptop from prying eyes the moment you step away - and from anyone trying to sneak a look over your shoulder. Smart detection. Instant alerts. 100% private.">
   <meta property="og:title" content="Screen Guardian">
   <meta name="robots" content="index, follow">
@@ -281,7 +278,8 @@
 
     .section h2,
     .privacy-section h2,
-    .cta-section h2 {
+    .cta-section h2,
+    .showcase-section h2 {
       font-size: clamp(2rem, 3.2vw, 2.7rem);
       line-height: 1.15;
       margin-bottom: 18px;
@@ -289,7 +287,8 @@
 
     .section > .container > p,
     .privacy-section p,
-    .cta-section p {
+    .cta-section p,
+    .showcase-copy > p {
       max-width: 720px;
       margin: 0 auto 42px;
       color: var(--text-soft);
@@ -329,6 +328,84 @@
       font-size: 1rem;
       margin: 0;
       max-width: none;
+    }
+
+    .showcase-section {
+      padding: 0 var(--page-padding) var(--section-padding);
+    }
+
+    .showcase-card {
+      width: min(100%, var(--container-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(320px, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 24px;
+      padding: clamp(20px, 3vw, 34px);
+      box-shadow: var(--shadow-strong);
+      overflow: hidden;
+    }
+
+    .showcase-visual {
+      position: relative;
+    }
+
+    .showcase-visual img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .showcase-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.14);
+      color: #fecaca;
+      border: 1px solid rgba(248, 113, 113, 0.35);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    .showcase-copy {
+      text-align: left;
+    }
+
+    .showcase-copy p {
+      margin: 0 0 24px 0;
+      max-width: none;
+    }
+
+    .showcase-points {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .showcase-points li {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: var(--text-soft);
+    }
+
+    .showcase-points strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.98rem;
     }
 
     .privacy-section {
@@ -422,6 +499,16 @@
       }
     }
 
+    @media (max-width: 980px) {
+      .showcase-card {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-copy {
+        text-align: center;
+      }
+    }
+
     @media (max-width: 900px) {
       .header-inner {
         flex-direction: column;
@@ -479,8 +566,15 @@
 
       .section > .container > p,
       .privacy-section p,
-      .cta-section p {
+      .cta-section p,
+      .showcase-copy > p {
         margin-bottom: 28px;
+      }
+
+      .showcase-badge {
+        top: 12px;
+        left: 12px;
+        font-size: 12px;
       }
     }
   </style>
@@ -546,6 +640,51 @@
 
       <div class="hero-visual">
         <img src="ScreenGuardianScene.png" alt="Unauthorized user looking at laptop">
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Shoulder snooping showcase section -->
+  <section class="showcase-section" aria-labelledby="snooping-showcase-title">
+    <div class="showcase-card">
+      <div class="showcase-visual">
+        <span class="showcase-badge">🚨 Shoulder Snooping Detected</span>
+        <img
+          src="screen_guardian_snooper.jpeg"
+          alt="Screen Guardian detecting an over-the-shoulder snooper looking at a laptop screen"
+        >
+      </div>
+
+      <div class="showcase-copy">
+        <h2 id="snooping-showcase-title">See Shoulder Snooping Detection in Action</h2>
+        <p>
+          Screen Guardian does more than protect your laptop when you walk away. It can also recognize when someone is
+          trying to glance at your screen in real time and immediately alert you.
+        </p>
+
+        <ul class="showcase-points">
+          <li>
+            <strong>Real-time awareness</strong>
+            Detects when an unknown person is looking toward your screen while you work in public.
+          </li>
+          <li>
+            <strong>Instant visual warning</strong>
+            Surfaces an on-screen alert the moment suspicious viewing behavior is detected.
+          </li>
+          <li>
+            <strong>Built for real environments</strong>
+            Perfect for airports, cafes, coworking spaces, conferences, and shared offices.
+          </li>
+        </ul>
+
+        <a
+          href="https://github.com/greenwaldliron/ScreenGuardianAI/releases/latest/download/Screen-Guardian-Setup.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Try It Now
+        </a>
       </div>
     </div>
   </section>
