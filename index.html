@@ -615,7 +615,16 @@
       display: flex;
       justify-content: center;
     }
-
+    
+    .footer-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
     @media (max-width: 1060px) {
       .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3, .problem-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1063,30 +1072,30 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 Screen Guardian. All rights reserved.</p>
-    <!-- 
-    <div class="producthunt-badge">
-      <a href="https://www.producthunt.com/products/screen-guardian?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-screen-guardian" target="_blank" rel="noopener noreferrer">
-        <img alt="Screen Guardian on Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1122663&theme=light&t=1776092973689" />
-      </a>
-    </div>
-    -->
-    <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+  
+<footer>
+  <p>© 2026 Screen Guardian. All rights reserved.</p>
+
+  <div class="footer-badges">
+    <!-- Microsoft Store Badge -->
+    <script type="module"
+      src="https://get.microsoft.com/badge/ms-store-badge.bundled.js">
+    </script>
+
     <ms-store-badge
-    	productid="9pdt3s479n6z"
-    	cid="website-homepage"
-    	window-mode="full"
-    	theme="auto"
-    	size="large"
-    	language="en-gb"
-    	animation="on">
+      productid="9pdt3s479n6z"
+      cid="website-homepage"
+      window-mode="full"
+      theme="auto"
+      size="large"
+      language="en-gb"
+      animation="on">
     </ms-store-badge>
 
+    <!-- PeerPush Badge -->
     <a href="https://peerpush.com/p/screen-guardian"
-      target="_blank"
-      rel="noopener"
-    >
+       target="_blank"
+       rel="noopener noreferrer">
       <img
         src="https://peerpush.com/p/screen-guardian/badge.png"
         alt="Screen Guardian on PeerPush"
@@ -1096,7 +1105,8 @@
         style="width: 230px; height: auto;"
       />
     </a>
-    
-  </footer>
+  </div>
+</footer>
+
 </body>
 </html>
